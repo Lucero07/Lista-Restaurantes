@@ -1,0 +1,29 @@
+body {
+  padding-top: 7%;
+}
+.navbar-default{
+  background-color: #e2abec;
+}
+.navbar{
+  min-height:4%;
+  margin-bottom: 0;
+}
+a img{
+  width: 50%;
+}
+#seccion1{
+  background-color: #bb609f;
+  background-size: cover;
+}
+.modal-content{
+  background-color: #2196F3;
+}
+#map{
+  margin-top: 7%;
+  margin-bottom: 2%;
+  border: 2px solid;
+  border-width: thin;
+  border-style: double;
+  border-color: #2bc7d6;
+  height: 300px;
+}
