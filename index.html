@@ -22,8 +22,7 @@
         <a class="navbar-brand col-xs-1" data-toggle="modal" data-target=".bs-example-modal-lg">
           <img alt="Agregar" src="img/fork.png">
         </a>
-        <a class="navbar-brand col-xs-1" data-toggle="modal-3" id="ubicacion"
-         data-target=".bs-example-modal-lg">
+        <a class="navbar-brand col-xs-1" data-toggle="modal-3" id="ubicacion" data-target=".bs-example-modal-lg">
           <img alt="Ubicacion" src="img/tool.png">
         </a>
         <a class="navbar-brand col-xs-1" data-toggle="modal-4" data-target=".bs-example-modal-lg">
@@ -41,68 +40,72 @@
       </div>
     </div>
   </nav>
-  <section class="mapa container">
-    <div class="localizador  col-xs-10 col-xs-offset-1" id="map"></div>
-
-
-  </section>
-  <section id="seccion1" class="container text-center">
+  <section class="container">
     <div class="row">
-      <h1>Comedores GarnachaPower</h1>
-      <div id="tarjeta-contacto" class="col-xs-8 col-xs-offset-2">
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-          <div class="panel panel-group restaurantesGarnacha">
-            <div class="panel-heading" role="tab">
-              <h4 class="panel-title">
-                  <a role="button" aria-controls="collapse-0">La casa de Toño. <br> Contacto: </a>
-              </h4>
-            </div>
-            <div>
-              <div class="panel-body">Direccion: Calle Sabino No. 166 Col. Santa María la Ribera Deleg. Cuauhtémoc, México D.F. C.P. 06400Entre Díaz Mirón y Manuel Carpio.<br> Recomendaciones: Pozole.
+      <section class="mapa col-xs-8">
+        <div class="localizador  col-xs-12" id="map"></div>
+      </section>
+      <section id="seccion1" class="col-xs-4 text-center">
+        <div class="row">
+          <h1>Comedores GarnachaPower</h1>
+          <div id="tarjeta-contacto" class="col-xs-8 col-xs-offset-2">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-group restaurantesGarnacha">
+                <div class="panel-heading garnachilero" data-longitud="-99.1622105" data-latitud="19.4497338" role="tab">
+                  <h4 class="panel-title">
+                      <a role="button" aria-controls="collapse-0">La casa de Toño. <br> Contacto: </a>
+                  </h4>
+                </div>
+                <div>
+                  <div class="panel-body">Direccion: Calle Sabino No. 166 Col. Santa María la Ribera Deleg. Cuauhtémoc, México D.F. C.P. 06400Entre Díaz Mirón y Manuel Carpio.<br> Recomendaciones: Pozole.
+                  </div>
+                </div>
+
+              </div>
+              <div class="panel panel-group restaurantesGarnacha">
+                <div class="panel-heading garnachilero" data-longitud="-99.2000583" data-latitud="19.431589" role="tab">
+                  <h4 class="panel-title">
+                      <a role="button" aria-controls="collapse-0">Dulce Patria en Las Alcobas. <br> Contacto: 52 55 3300 3999</a>
+                  </h4>
+                </div>
+                <div>
+                  <div class="panel-body">Direccion: Anatole France 100 | Col. Polanco, Ciudad de México, México.<br> Recomendaciones: La nieve neblina.
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-group restaurantesGarnacha">
+                <div class="panel-heading garnachilero" data-longitud="-99.1734143" data-latitud="19.360057" role="tab">
+                  <h4 class="panel-title">
+                      <a role="button" aria-controls="collapse-0">Sonora Grill Coyoacán. <br> Contacto: 5256041571</a>
+                  </h4>
+                </div>
+                <div>
+                  <div class="panel-body">Direccion: Avenida Coyoacan 1955, Ciudad de México 14000, México.<br> Recomendaciones: Cortes.
+                  </div>
+                </div>
+
+              </div>
+              <div class="panel panel-group restaurantesGarnacha">
+                <div class="panel-heading garnachilero" data-longitud="-99.1950117" data-latitud="19.428" role="tab">
+                  <h4 class="panel-title">
+                      <a role="button" aria-controls="collapse-0">Agua y Sal Cebichería. <br> Contacto: 52 55 5282 2746 </a>
+                  </h4>
+                </div>
+                <div>
+                  <div class="panel-body">Direccion: Campos Eliseos 199-A, Polanco, Ciudad de México, México. <br> Recomendaciones: Ceviches..
+                  </div>
+                </div>
+
               </div>
             </div>
-            <button id="get-location" type="button" class="btn btn-primary btn-large">Obtener ubicación</button>
-          </div>
-          <div class="panel panel-group restaurantesGarnacha">
-            <div class="panel-heading" role="tab">
-              <h4 class="panel-title">
-                  <a role="button" aria-controls="collapse-0">Dulce Patria en Las Alcobas. <br> Contacto: 52 55 3300 3999</a>
-              </h4>
-            </div>
-            <div>
-              <div class="panel-body">Direccion: Anatole France 100 | Col. Polanco, Ciudad de México, México.<br> Recomendaciones: La nieve neblina.
-              </div>
-            </div>
-            <button id="get-location_1" type="button" class="btn btn-primary btn-large">Obtener ubicación</button>
-          </div>
-          <div class="panel panel-group restaurantesGarnacha">
-            <div class="panel-heading" role="tab">
-              <h4 class="panel-title">
-                  <a role="button" aria-controls="collapse-0">Sonora Grill Coyoacán. <br> Contacto: 5256041571</a>
-              </h4>
-            </div>
-            <div>
-              <div class="panel-body">Direccion: Avenida Coyoacan 1955, Ciudad de México 14000, México.<br> Recomendaciones: Cortes.
-              </div>
-            </div>
-            <button id="get-location_2" type="button" class="btn btn-primary btn-large">Obtener ubicación</button>
-          </div>
-          <div class="panel panel-group restaurantesGarnacha">
-            <div class="panel-heading" role="tab">
-              <h4 class="panel-title">
-                  <a role="button" aria-controls="collapse-0">Agua y Sal Cebichería. <br> Contacto: 52 55 5282 2746 </a>
-              </h4>
-            </div>
-            <div>
-              <div class="panel-body">Direccion: Campos Eliseos 199-A, Polanco, Ciudad de México, México. <br> Recomendaciones: Ceviches..
-              </div>
-            </div>
-            <button id="get-location_3" type="button" class="btn btn-primary btn-large">Obtener ubicación</button>
           </div>
         </div>
-      </div>
+      </section>
+
     </div>
   </section>
+
+
   <section class="modal1 container">
     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
       <div class="modal-dialog modal-lg" role="document">
@@ -120,12 +123,22 @@
               </div>
               <div class="form-group col-xs-6">
                 <label for="exampleInputNember1">Numero del Local</label>
-                <input type="number" class="form-control" id="numeroLocal" rows="1" placeholder="Numero del Local">
+                <input type="number" class="form-control" id="numeroLocal"  placeholder="Numero del Local">
               </div>
             </div>
             <div class="form-group">
               <label for="exampleInputDirection1">Dirección</label>
               <input type="text" class="form-control" id="direccion" placeholder="Dirección">
+            </div>
+            <div class="row">
+              <div class="form-group col-xs-6">
+                <label for="exampleInputName2">Latitud</label>
+                <input type="text" class="form-control" id="valorLatitud" placeholder="Coordenadas de Latitud">
+              </div>
+              <div class="form-group col-xs-6">
+                <label for="exampleInputNember1">Longitud</label>
+                <input type="text" class="form-control" id="valorLongitud"  placeholder="Coordenadas en Longitud">
+              </div>
             </div>
             <div class="form-group">
               <label for="exampleInputRecomendacion1">Recomendación address</label>
@@ -142,7 +155,7 @@
       </div>
     </div>
   </section>
-  <section class="ruta container">
+  <!-- <section class="ruta container">
     <div class="col-xs-6 col-xs-offset-3">
       <label for="origen">Origen</label>
       <input type="text" name="origen" id="origen" placeholder="calle, ciudad, estado..." />
@@ -167,15 +180,15 @@
     </div>
     <br />
     <div>
-        <div id="map_canvas" style="float:left; width:70%; height:500px"></div>
-        <div id="panel_ruta" style="float:right; overflow: auto; width:30%; height: 500px"></div>
+      <div id="map_canvas" style="float:left; width:70%; height:500px"></div>
+      <div id="panel_ruta" style="float:right; overflow: auto; width:30%; height: 500px"></div>
     </div>
 
 
 
   </section>
 
-
+ -->
 
 
 

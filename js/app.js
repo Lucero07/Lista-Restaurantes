@@ -18,10 +18,15 @@
     var $botonRestauante = $("#boton-agregar-contacto");
     var $nombreTitulo = $("#nombre-visual");
     var $acordion = $("#accordion");
+    var $valorLatitud =$("#valorLatitud").val();
+    var $valorLongitud = $("#valorLongitud").val();
+console.log($valorLongitud , $valorLatitud);
+
     var nombreRestauante = $nombre.val();
     var numeroRestauante = $numeroLocal.val();
     var direccionRestauante = $direccion.val();
     var recomendaciones = $recomendaciones.val();
+
 
 
     // Creamos elementos
@@ -33,11 +38,13 @@
       "aria-label": "Close"
     });
     var $tarjeta = $("<div />", {
-      "class": "panel panel-group restaurantesGarnacha"
+      "class": "panel panel-group restaurantesGarnacha "
     });
     var $encabezadoTarjeta = $("<div />", {
-      "class": "panel-heading",
-      "role": "tab"
+      "class": "panel-heading garnachilero",
+      "role": "tab",
+      "data-latitud": $valorLatitud,
+      "data-longitud":$valorLongitud,
     });
     var $tituloTarjeta = $("<h4 />", {
       "class": "panel-title"
@@ -50,9 +57,9 @@
       "class": "panel-body"
     });
     var $enlaceDatos = $("<a />");
-    var $botonGarnacha = $("<button />",{
-      "type":"button",
-      "class":"btn btn-success btn-large"
+    var $botonGarnacha = $("<button />", {
+      "type": "button",
+      "class": "btn btn-success btn-large"
     });
 
     var id = "marcador-" + contador;
@@ -96,9 +103,9 @@
     $botonRestauante.attr("disabled", true);
     //Mardar llamar el mapa
     $botonGarnacha.click(obtenerUbicacion);
-    var restaurantes= [];
-     restaurantes.push($tarjeta);
-     console.log(restaurantes);
+    var restaurantes = [];
+    restaurantes.push($tarjeta);
+    console.log(restaurantes);
 
     contador++;
   };
@@ -130,81 +137,103 @@
     }
   };
   //para funcionalidad de geolocalizacion
+  var obtenerUbicacion = function(event) {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(mostrarPosicion);
+    } else {
+      alert("Actualice su navegador");
+    }
+  };
+
+  var mostrarPosicion = function(posicion) {
+    var latitud = posicion.coords.latitude;
+    var longitud = posicion.coords.longitude;
+    var coordenadas = {
+      lat: latitud,
+      lng: longitud
+    };
+    mostrarMapa(coordenadas);
+  };
+
+  var mostrarMapa = function(coordenadas) {
+    var map = new google.maps.Map($('#map')[0], {
+      zoom: 17,
+      center: coordenadas
+    });
+    var marker = new google.maps.Marker({
+      position: coordenadas,
+      map: map
+    });
+  };
+  // para obtener la ubicacion de los restaurantes
+  $("#ubicacion").click(obtenerUbicacion());
+  $(document).on("click",".garnachilero",cambiarUbicacion);
 
 
+  function cambiarUbicacion() {
+    var latitud = $(this).data("latitud");
+    var longitud = $(this).data("longitud");
 
-var obtenerUbicacion = function(event) {
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(mostrarPosicion);
-} else {
-  alert("Actualice su navegador");
-}
-};
-
-var mostrarPosicion = function (posicion) {
-var coordenadas = {
-  lat: posicion.coords.latitude,
-  lng: posicion.coords.longitude
-};
-mostrarMapa(coordenadas);
-};
-
-var mostrarMapa = function (coordenadas) {
-  var map = new google.maps.Map($('#map')[0], {
-    zoom: 17,
-    center: coordenadas
-  });
-  var marker = new google.maps.Marker({
-    position: coordenadas,
-    map: map
-  });
-};
-  $("#ubicacion").click(obtenerUbicacion);
-
-// funcion para buscar.
-$("#formularioBuscar").change(filtrarContactos);
-   var filtrarContactos = function (e) {
-  	e.preventDefault();
-    var restaurantesGarnacha = $(".restaurantesGarnacha");
- 	  var criterioBusqueda = $("#buscarRestaurante").val().toLowerCase();
-  	var contactosFiltrados = restaurantesGarnacha.filter(function (contacto) {
-  		return restaurantesGarnacha.child.child.child.toLowerCase().indexOf(criterioBusqueda) >= 0;
-        console.log(contactosFiltrados);
-  });
-  console.log(contactosFiltrados);
-  // 	//mostrarContactos(contactosFiltrados);
-   };
-
-
-
-   var directionsDisplay = new google.maps.DirectionsRenderer();
-   var directionsService = new google.maps.DirectionsService();
-
-
-   var request = {
-    origin: $('#origen').val(),
-    destination: $('#destino').val(),
-    travelMode: google.maps.DirectionsTravelMode[$('#modo_viaje').val()],
-    unitSystem: google.maps.DirectionsUnitSystem[$('#tipo_sistema').val()],
-    provideRouteAlternatives: true
+    var coordenadas = {
+      lat: latitud,
+      lng: longitud
     };
 
-    directionsService.route(request, function(response, status) {
-        if (status == google.maps.DirectionsStatus.OK) {
-            directionsDisplay.setMap(map);
-            directionsDisplay.setPanel($("#panel_ruta").get(0));
-            directionsDisplay.setDirections(response);
-        } else {
-                alert("No existen rutas entre ambos puntos");
-        }
-    });
-    $('#buscar').live('click', function(){
-    rockAndRoll();
-});
+    console.log(coordenadas);
+    mostrarMapa(coordenadas);
+  }
 
-$('.opciones_ruta').live('change', function(){
-    rockAndRoll();
-});
+
+
+
+
+
+  // funcion para buscar.
+  $("#formularioBuscar").change(filtrarContactos);
+  var filtrarContactos = function(e) {
+    e.preventDefault();
+    var restaurantesGarnacha = $(".restaurantesGarnacha");
+    var criterioBusqueda = $("#buscarRestaurante").val().toLowerCase();
+    var contactosFiltrados = restaurantesGarnacha.filter(function(contacto) {
+      return restaurantesGarnacha.child.child.child.toLowerCase().indexOf(criterioBusqueda) >= 0;
+      console.log(contactosFiltrados);
+    });
+    console.log(contactosFiltrados);
+    // 	//mostrarContactos(contactosFiltrados);
+  };
+
+
+
+
+  //
+  //    var directionsDisplay = new google.maps.DirectionsRenderer();
+  //    var directionsService = new google.maps.DirectionsService();
+  //
+  //
+  //    var request = {
+  //     origin: $('#origen').val(),
+  //     destination: $('#destino').val(),
+  //     travelMode: google.maps.DirectionsTravelMode[$('#modo_viaje').val()],
+  //     unitSystem: google.maps.DirectionsUnitSystem[$('#tipo_sistema').val()],
+  //     provideRouteAlternatives: true
+  //     };
+  //
+  //     directionsService.route(request, function(response, status) {
+  //         if (status == google.maps.DirectionsStatus.OK) {
+  //             directionsDisplay.setMap(map);
+  //             directionsDisplay.setPanel($("#panel_ruta").get(0));
+  //             directionsDisplay.setDirections(response);
+  //         } else {
+  //                 alert("No existen rutas entre ambos puntos");
+  //         }
+  //     });
+  //     $('#buscar').live('click', function(){
+  //     rockAndRoll();
+  // });
+  //
+  // $('.opciones_ruta').live('change', function(){
+  //     rockAndRoll();
+  // });
 
 
 
