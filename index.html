@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/maps/documentation/javascript/demos/demos.css">
+
   <title>Comedores GarnachaPower</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/main.css">
@@ -16,24 +16,25 @@
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand col-xs-2 col-xs-offset-1" data-toggle="modal-1" data-target=".bs-example-modal-lg">
+        <a class="navbar-brand col-xs-1" data-toggle="modal-1" href="#seccion1" data-target=".bs-example-modal-lg">
           <img alt="Restaurante" src="img/contacts (1).png">
         </a>
-        <a class="navbar-brand col-xs-2" data-toggle="modal" data-target=".bs-example-modal-lg">
+        <a class="navbar-brand col-xs-1" data-toggle="modal" data-target=".bs-example-modal-lg">
           <img alt="Agregar" src="img/fork.png">
         </a>
-        <a class="navbar-brand col-xs-2" data-toggle="modal-3" data-target=".bs-example-modal-lg">
+        <a class="navbar-brand col-xs-1" data-toggle="modal-3" id="ubicacion"
+         data-target=".bs-example-modal-lg">
           <img alt="Ubicacion" src="img/tool.png">
         </a>
-        <a class="navbar-brand col-xs-2" data-toggle="modal-4" data-target=".bs-example-modal-lg">
+        <a class="navbar-brand col-xs-1" data-toggle="modal-4" data-target=".bs-example-modal-lg">
           <img alt="Favoritos" src="img/favorite.png">
         </a>
-        <a class="navbar-brand col-xs-2" data-toggle="modal-2" data-target=".bs-example-modal-lg">
+        <a class="navbar-brand col-xs-1" data-toggle="modal-2" data-target=".bs-example-modal-lg">
           <img alt="Buscar" src="img/find (1).png">
         </a>
-        <form class="navbar-form navbar-left" role="search">
+        <form class="navbar-form navbar-right col-xs-4" role="search" id="formularioBuscar">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
+            <input type="text" class="form-control" placeholder="Buscar" id="buscarRestaurante">
           </div>
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
@@ -50,7 +51,7 @@
       <h1>Comedores GarnachaPower</h1>
       <div id="tarjeta-contacto" class="col-xs-8 col-xs-offset-2">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-          <div class="panel panel-group">
+          <div class="panel panel-group restaurantesGarnacha">
             <div class="panel-heading" role="tab">
               <h4 class="panel-title">
                   <a role="button" aria-controls="collapse-0">La casa de Toño. <br> Contacto: </a>
@@ -60,43 +61,43 @@
               <div class="panel-body">Direccion: Calle Sabino No. 166 Col. Santa María la Ribera Deleg. Cuauhtémoc, México D.F. C.P. 06400Entre Díaz Mirón y Manuel Carpio.<br> Recomendaciones: Pozole.
               </div>
             </div>
-            <!-- <button type="button"><span>&times;</span></button></div> -->
+            <button id="get-location" type="button" class="btn btn-primary btn-large">Obtener ubicación</button>
           </div>
-          <div class="panel panel-group">
+          <div class="panel panel-group restaurantesGarnacha">
             <div class="panel-heading" role="tab">
               <h4 class="panel-title">
-                  <a role="button" aria-controls="collapse-0">La casa de Toño. <br> Contacto: </a>
+                  <a role="button" aria-controls="collapse-0">Dulce Patria en Las Alcobas. <br> Contacto: 52 55 3300 3999</a>
               </h4>
             </div>
             <div>
-              <div class="panel-body">Direccion: Calle Sabino No. 166 Col. Santa María la Ribera Deleg. Cuauhtémoc, México D.F. C.P. 06400Entre Díaz Mirón y Manuel Carpio.<br> Recomendaciones: Pozole.
+              <div class="panel-body">Direccion: Anatole France 100 | Col. Polanco, Ciudad de México, México.<br> Recomendaciones: La nieve neblina.
               </div>
             </div>
-            <!-- <button type="button"><span>&times;</span></button></div> -->
+            <button id="get-location_1" type="button" class="btn btn-primary btn-large">Obtener ubicación</button>
           </div>
-          <div class="panel panel-group">
+          <div class="panel panel-group restaurantesGarnacha">
             <div class="panel-heading" role="tab">
               <h4 class="panel-title">
-                  <a role="button" aria-controls="collapse-0">La casa de Toño. <br> Contacto: </a>
+                  <a role="button" aria-controls="collapse-0">Sonora Grill Coyoacán. <br> Contacto: 5256041571</a>
               </h4>
             </div>
             <div>
-              <div class="panel-body">Direccion: Calle Sabino No. 166 Col. Santa María la Ribera Deleg. Cuauhtémoc, México D.F. C.P. 06400Entre Díaz Mirón y Manuel Carpio.<br> Recomendaciones: Pozole.
+              <div class="panel-body">Direccion: Avenida Coyoacan 1955, Ciudad de México 14000, México.<br> Recomendaciones: Cortes.
               </div>
             </div>
-            <!-- <button type="button"><span>&times;</span></button></div> -->
+            <button id="get-location_2" type="button" class="btn btn-primary btn-large">Obtener ubicación</button>
           </div>
-          <div class="panel panel-group">
+          <div class="panel panel-group restaurantesGarnacha">
             <div class="panel-heading" role="tab">
               <h4 class="panel-title">
-                  <a role="button" aria-controls="collapse-0">La casa de Toño. <br> Contacto: </a>
+                  <a role="button" aria-controls="collapse-0">Agua y Sal Cebichería. <br> Contacto: 52 55 5282 2746 </a>
               </h4>
             </div>
             <div>
-              <div class="panel-body">Direccion: Calle Sabino No. 166 Col. Santa María la Ribera Deleg. Cuauhtémoc, México D.F. C.P. 06400Entre Díaz Mirón y Manuel Carpio.<br> Recomendaciones: Pozole.
+              <div class="panel-body">Direccion: Campos Eliseos 199-A, Polanco, Ciudad de México, México. <br> Recomendaciones: Ceviches..
               </div>
             </div>
-            <!-- <button type="button"><span>&times;</span></button></div> -->
+            <button id="get-location_3" type="button" class="btn btn-primary btn-large">Obtener ubicación</button>
           </div>
         </div>
       </div>
@@ -141,6 +142,38 @@
       </div>
     </div>
   </section>
+  <section class="ruta container">
+    <div class="col-xs-6 col-xs-offset-3">
+      <label for="origen">Origen</label>
+      <input type="text" name="origen" id="origen" placeholder="calle, ciudad, estado..." />
+      <br />
+      <label for="destino">Destino</label>
+      <input type="text" name="destino" id="destino" placeholder="calle, ciudad, estado..." />
+      <br />
+      <input type="button" id="buscar" value="Buscar ruta" />
+    </div>
+    <br />
+    <h3>Opciones</h3>
+    <div id="rutaOps">
+      <select id="modo_viaje" class="opciones_ruta">
+            <option value="DRIVING" selected="selected">Auto</option>
+            <option value="BICYCLING">Bicicleta</option>
+            <option value="WALKING">Caminando</option>
+      </select>
+      <select id="tipo_sistema" class="opciones_ruta">
+            <option value="METRIC" selected="selected">Métrico</option>
+            <option value="IMPERIAL">Imperial</option>
+      </select>
+    </div>
+    <br />
+    <div>
+        <div id="map_canvas" style="float:left; width:70%; height:500px"></div>
+        <div id="panel_ruta" style="float:right; overflow: auto; width:30%; height: 500px"></div>
+    </div>
+
+
+
+  </section>
 
 
 
@@ -148,7 +181,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFjq3mlFuVXFVTk5862eKpAjlJG8JheB8&callback=initMap" async defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiAOwY4VsWKIKzdkRYdvykbVWP1Lvja-A" async defer></script>
   <script src="js/jquery-3.2.1.min.js" charset="utf-8"></script>
   <script src="js/app.js" charset="utf-8"></script>
 </body>
